@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29721.120
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HowToTestYourCsharpWebApi.Api", "HowToTestYourCsharpWebApi.Api\HowToTestYourCsharpWebApi.Api.csproj", "{6CB06957-30D6-4FF8-9752-7357E8E8EEC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HowToTestYourCsharpWebApi.Tests", "HowToTestYourCsharpWebApi.Tests\HowToTestYourCsharpWebApi.Tests.csproj", "{635A0711-4B27-4479-8652-F4BDAF4AEA1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CB06957-30D6-4FF8-9752-7357E8E8EEC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB06957-30D6-4FF8-9752-7357E8E8EEC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB06957-30D6-4FF8-9752-7357E8E8EEC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB06957-30D6-4FF8-9752-7357E8E8EEC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{635A0711-4B27-4479-8652-F4BDAF4AEA1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{635A0711-4B27-4479-8652-F4BDAF4AEA1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{635A0711-4B27-4479-8652-F4BDAF4AEA1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{635A0711-4B27-4479-8652-F4BDAF4AEA1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01BD99B1-9ED0-472C-AB7B-65C0D1767BB4}
+	EndGlobalSection
+EndGlobal
