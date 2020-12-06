@@ -41,7 +41,7 @@ namespace HowToTestYourCsharpWebApi.Tests
                     services.AddTransient<IWeatherForecastConfigService, InvalidWeatherForecastConfigStub>();
                 });
             })
-            .CreateClient(new WebApplicationFactoryClientOptions());
+            .CreateClient();
 
             var response = await client.GetAsync("/weatherforecast");
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);

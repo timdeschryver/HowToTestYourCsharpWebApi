@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HowToTestYourCsharpWebApi.Api.Adapters;
+using HowToTestYourCsharpWebApi.Api.Ports;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,7 @@ namespace HowToTestYourCsharpWebApi.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTransient<IWeatherForecastConfigService, WeatherForecastConfigService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
