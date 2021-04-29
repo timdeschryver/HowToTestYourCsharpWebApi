@@ -2,12 +2,8 @@ using FluentAssertions;
 using HowToTestYourCsharpWebApi.Api;
 using HowToTestYourCsharpWebApi.Api.Ports;
 using HowToTestYourCsharpWebApi.Tests.Fixtures;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.AspNetCore.TestHost;
-using Microsoft.Extensions.Configuration;
+using HowToTestYourCsharpWebApi.Tests.Utils;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
 using System.Net;
 using System.Threading.Tasks;
 using Xunit;
@@ -22,12 +18,7 @@ namespace HowToTestYourCsharpWebApi.Tests
         [Fact]
         public async Task Get_Should_Return_Forecast()
         {
-            var response = await _client.GetAsync("/weatherforecast");
-            response.StatusCode.Should().Be(HttpStatusCode.OK);
-
-            var forecast = JsonConvert.DeserializeObject<WeatherForecast[]>(
-              await response.Content.ReadAsStringAsync()
-            );
+            var forecast = await _client.GetAndDeserialize<WeatherForecast[]>("/weatherforecast");
             forecast.Should().HaveCount(7);
         }
 
