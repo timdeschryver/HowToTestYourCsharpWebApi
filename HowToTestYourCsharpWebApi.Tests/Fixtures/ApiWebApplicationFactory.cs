@@ -9,18 +9,19 @@ namespace HowToTestYourCsharpWebApi.Tests.Fixtures
 {
     public class ApiWebApplicationFactory : WebApplicationFactory<Api.Startup>
     {
+        public IConfiguration Configuration { get; private set; }
+        
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
             builder.ConfigureAppConfiguration(config =>
             {
-                var integrationConfig = new ConfigurationBuilder()
+                Configuration = new ConfigurationBuilder()
                   .AddJsonFile("integrationsettings.json")
                   .Build();
 
-                config.AddConfiguration(integrationConfig);
+                config.AddConfiguration(Configuration);
             });
 
-            // is called after the `ConfigureServices` from the Startup
             builder.ConfigureTestServices(services =>
             {
                 services.AddTransient<IWeatherForecastConfigService, WeatherForecastConfigStub>();

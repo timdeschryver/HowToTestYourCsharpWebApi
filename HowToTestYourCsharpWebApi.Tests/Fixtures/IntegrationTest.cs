@@ -17,19 +17,14 @@ namespace HowToTestYourCsharpWebApi.Tests.Fixtures
 
         protected readonly ApiWebApplicationFactory _factory;
         protected readonly HttpClient _client;
-        protected readonly IConfiguration _configuration;
 
         public IntegrationTest(ApiWebApplicationFactory fixture)
         {
             _factory = fixture;
             _client = _factory.CreateClient();
-            _configuration = new ConfigurationBuilder()
-                  .AddJsonFile("integrationsettings.json")
-                  .Build();
 
             // if needed, reset the DB
-            //_checkpoint.Reset(_configuration.GetConnectionString("SQL")).Wait();
+            //_checkpoint.Reset(_factory.Configuration.GetConnectionString("SQL")).Wait();
         }
     }
-
 }
