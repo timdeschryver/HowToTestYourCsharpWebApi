@@ -13,7 +13,7 @@ namespace HowToTestYourCsharpWebApi.Tests
     public class WeatherForecastControllerTests : IntegrationTest
     {
         public WeatherForecastControllerTests(ApiWebApplicationFactory fixture)
-          : base(fixture) { }
+            : base(fixture) { }
 
         [Fact]
         public async Task GET_retrieves_weather_forecast()
@@ -25,7 +25,7 @@ namespace HowToTestYourCsharpWebApi.Tests
         [Fact]
         public async Task GET_with_invalid_config_results_in_a_bad_request()
         {
-            var client = _factory.WithWebHostBuilder(builder =>
+            var clientWithInvalidConfig = _factory.WithWebHostBuilder(builder =>
             {
                 builder.ConfigureServices(services =>
                 {
@@ -34,7 +34,7 @@ namespace HowToTestYourCsharpWebApi.Tests
             })
             .CreateClient();
 
-            var response = await client.GetAsync("/weatherforecast");
+            var response = await clientWithInvalidConfig.GetAsync("/weatherforecast");
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
         }
 

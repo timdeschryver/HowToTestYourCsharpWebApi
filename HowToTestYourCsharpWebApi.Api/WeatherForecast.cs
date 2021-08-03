@@ -1,5 +1,3 @@
-using System;
-
 namespace HowToTestYourCsharpWebApi.Api
 {
     public class WeatherForecast
