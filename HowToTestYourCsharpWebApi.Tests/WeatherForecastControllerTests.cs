@@ -16,14 +16,14 @@ namespace HowToTestYourCsharpWebApi.Tests
           : base(fixture) { }
 
         [Fact]
-        public async Task Get_Should_Return_Forecast()
+        public async Task GET_retrieves_weather_forecast()
         {
             var forecast = await _client.GetAndDeserialize<WeatherForecast[]>("/weatherforecast");
             forecast.Should().HaveCount(7);
         }
 
         [Fact]
-        public async Task Get_Should_ResultInABadRequest_When_ConfigIsInvalid()
+        public async Task GET_with_invalid_config_results_in_a_bad_request()
         {
             var client = _factory.WithWebHostBuilder(builder =>
             {
