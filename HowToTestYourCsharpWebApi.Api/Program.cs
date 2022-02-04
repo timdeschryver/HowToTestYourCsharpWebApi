@@ -44,3 +44,5 @@ app.MapGet("/weatherforecast", (IWeatherForecastConfigService _weatherForecastCo
 });
 
 await app.RunAsync();
+
+public partial class Program { }

@@ -4,11 +4,10 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace HowToTestYourCsharpWebApi.Tests.Fixtures
 {
-    public class ApiWebApplicationFactory : WebApplicationFactory<Api.WeatherForecast>
+    public class ApiWebApplicationFactory : WebApplicationFactory<Program>
     {
         public IConfiguration Configuration { get; private set; }
 
