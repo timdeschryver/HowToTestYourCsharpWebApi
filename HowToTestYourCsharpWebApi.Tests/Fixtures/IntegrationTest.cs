@@ -5,6 +5,7 @@ using Xunit;
 
 namespace HowToTestYourCsharpWebApi.Tests.Fixtures
 {
+    [Trait("Category", "Integration")]
     public abstract class IntegrationTest : IClassFixture<ApiWebApplicationFactory>
     {
         //private readonly Checkpoint _checkpoint = new Checkpoint
